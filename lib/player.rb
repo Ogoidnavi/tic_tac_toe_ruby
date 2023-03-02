@@ -17,9 +17,9 @@ class ClassName
     location.to_i
   end
 
-  def player_won?
-    Board.row_win?(symbol) || Board.column_win?(symbol) ||
-      Board.diagonal_win?(symbol)
+  def player_won?(board)
+    board.row_win?(symbol) || board.column_win?(symbol) ||
+      board.diagonal_win?(symbol)
   end
 
   def win_message
