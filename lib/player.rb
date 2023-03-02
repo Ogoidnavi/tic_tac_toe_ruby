@@ -3,7 +3,7 @@
 require_relative './board'
 
 # Class for Player
-class ClassName
+class Player
   attr_reader :symbol
 
   def initialize(name, symbol)
@@ -18,8 +18,8 @@ class ClassName
   end
 
   def player_won?(board)
-    board.row_win?(symbol) || board.column_win?(symbol) ||
-      board.diagonal_win?(symbol)
+    board.row_win?(@symbol) || board.column_win?(@symbol) ||
+      board.diagonal_win?(@symbol)
   end
 
   def win_message

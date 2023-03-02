@@ -9,13 +9,13 @@ class Board
   end
 
   def display_board
-    puts "/n
-    #{board[0]} | #{board[1]} | #{board[2]}
+    puts "\n
+    #{@board[0]} | #{@board[1]} | #{@board[2]}
     --+---+--
-    #{board[3]} | #{board[4]} | #{board[5]}
+    #{@board[3]} | #{@board[4]} | #{@board[5]}
     --+---+--
-    #{board[6]} | #{board[7]} | #{board[8]}
-    /n"
+    #{@board[6]} | #{@board[7]} | #{@board[8]}
+    \n"
   end
 
   def update_board(symbol, location)
@@ -29,13 +29,13 @@ class Board
       board.values_at(6, 7, 8).all? { |sym| sym == symbol }
   end
 
-  def column_win?
+  def column_win?(symbol)
     board.values_at(0, 3, 6).all? { |sym| sym == symbol } ||
       board.values_at(1, 4, 7).all? { |sym| sym == symbol } ||
       board.values_at(2, 5, 8).all? { |sym| sym == symbol }
   end
 
-  def diagonal_win?
+  def diagonal_win?(symbol)
     board.values_at(0, 4, 8).all? { |sym| sym == symbol } ||
       board.values_at(2, 4, 6).all? { |sym| sym == symbol }
   end
